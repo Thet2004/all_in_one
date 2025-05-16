@@ -1,3 +1,3 @@
 apt update -y
-curl -o $PREFIX/bin/404 https://raw.githubusercontent.com/nyeinkokoaung404/Selector/main/Sel.sh
-chmod +x $PREFIX/bin/404
+curl -o $PREFIX/bin/naoki https://raw.githubusercontent.com/Thet2004/all_in_one/main/Sel.sh
+chmod +x $PREFIX/bin/naoki
