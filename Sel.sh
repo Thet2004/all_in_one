@@ -97,7 +97,7 @@ show_menu() {
     echo -e "${ARROW} ${GREEN}6${NC} ◇ Install NAOKI-SSH Manager"
     echo -e "${ARROW} ${GREEN}7${NC} ◇ Install ZI-VPN"
     echo -e "${ARROW} ${GREEN}8${NC} ◇ Uninstall ZI-VPN"
-    echo -e "${ARROW} ${RED}9${NC} ◇ Install Selector Tool"
+    echo -e "${ARROW} ${RED}naoki${NC} ◇ Install Selector Tool"
     echo -e "${ARROW} ${YELLOW}help${NC} ◇ Show Help Information"
     echo -e "${ARROW} ${RED}exit${NC} ◇ Quit Program"
     echo -e "${LINE}"
@@ -128,33 +128,25 @@ install_option() {
             bash <(curl -Ls https://raw.githubusercontent.com/alireza0/x-ui/master/install.sh)
             ;;
         3)
-            echo -e "${CHECK} Installing 4-0-4 UDP Script..."
-            git clone https://github.com/nyeinkokoaung404/udp-custom && cd udp-custom && chmod +x install.sh && ./install.sh
-            ;;
-        4)
             echo -e "${CHECK} Installing UDP Custom Manager..."
             wget "https://raw.githubusercontent.com/noobconner21/UDP-Custom-Script/main/install.sh" -O install.sh && chmod +x install.sh && bash install.sh
             ;;
-        5)
-            echo -e "${CHECK} Installing DARKSSH Manager..."
-            wget https://raw.githubusercontent.com/sbatrow/DARKSSH-MANAGER/master/Dark; chmod 777 Dark; ./Dark
-            ;;
-        6)
+        4)
             echo -e "${CHECK} Installing NAOKI-SSH Manager..."
             wget https://raw.githubusercontent.com/nyeinkokoaung404/ssh-manger/main/hehe; chmod 777 hehe;./hehe
             ;;
-        7)
+        5)
             echo -e "${CHECK} Installing ZI-VPN..."
             wget -O zi.sh https://raw.githubusercontent.com/zahidbd2/udp-zivpn/main/zi.sh; sudo chmod +x zi.sh; sudo ./zi.sh
             ;;
-        8)
+        6)
             echo -e "${CHECK} Uninstalling ZI-VPN..."
             sudo wget -O ziun.sh https://raw.githubusercontent.com/zahidbd2/udp-zivpn/main/uninstall.sh; sudo chmod +x ziun.sh; sudo ./ziun.sh
             ;;
-        9)
-            echo -e "${CHECK} Installing Selector Tool..."
-            bash <(curl -fsSL https://raw.githubusercontent.com/nyeinkokoaung404/Selector/main/install.sh)
-            echo -e "\n${STAR} ${GREEN}Installation complete! You can now run the tool with '9' command.${NC}"
+        naoki)
+            echo -e "${CHECK} Installing Naoki Tool..."
+            bash <(curl -fsSL https://raw.githubusercontent.com/Thet2004/all_in_one/main/install.sh)
+            echo -e "\n${STAR} ${GREEN}Installation complete! You can now run the tool with 'naoki' command.${NC}"
             ;;
         *)
             echo -e "${CROSS} ${RED}Invalid option!${NC}"
@@ -171,7 +163,7 @@ show_system_info
 while true; do
     show_menu
     
-    echo -en "${HEART} ${CYAN}Enter your choice (0-9/help/exit):${NC} "
+    echo -en "${HEART} ${CYAN}Enter your choice (0-8/naoki/help/exit):${NC} "
     read -r user_input
     
     case $user_input in
@@ -184,7 +176,7 @@ while true; do
             exit 0
             ;;
         *)
-            if [[ "$user_input" =~ ^(0|1|2|3|4|5|6|7|8|9)$ ]]; then
+            if [[ "$user_input" =~ ^(0|1|2|3|4|5|6|7|8|naoki)$ ]]; then
                 install_option "$user_input"
                 echo -e "${LINE}"
                 echo -e "${CHECK} ${GREEN}Operation completed successfully!${NC}"
