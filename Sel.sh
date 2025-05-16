@@ -151,7 +151,7 @@ install_option() {
             echo -e "${CHECK} Uninstalling ZI-VPN..."
             sudo wget -O ziun.sh https://raw.githubusercontent.com/zahidbd2/udp-zivpn/main/uninstall.sh; sudo chmod +x ziun.sh; sudo ./ziun.sh
             ;;
-        404)
+        9)
             echo -e "${CHECK} Installing Selector Tool..."
             bash <(curl -fsSL https://raw.githubusercontent.com/nyeinkokoaung404/Selector/main/install.sh)
             echo -e "\n${STAR} ${GREEN}Installation complete! You can now run the tool with '9' command.${NC}"
