@@ -91,10 +91,10 @@ show_menu() {
     echo -e "${ARROW} ${GREEN}3${NC} ◇ Install 4-0-4 UDP Speed Boost"
     echo -e "${ARROW} ${GREEN}4${NC} ◇ Install UDP Custom Manager"
     echo -e "${ARROW} ${GREEN}5${NC} ◇ Install DARKSSH Manager"
-    echo -e "${ARROW} ${GREEN}6${NC} ◇ Install 404-SSH Manager"
+    echo -e "${ARROW} ${GREEN}6${NC} ◇ Install NAOKI-SSH Manager"
     echo -e "${ARROW} ${GREEN}7${NC} ◇ Install ZI-VPN"
     echo -e "${ARROW} ${GREEN}8${NC} ◇ Uninstall ZI-VPN"
-    echo -e "${ARROW} ${RED}404${NC} ◇ Install Selector Tool"
+    echo -e "${ARROW} ${RED}9${NC} ◇ Install Selector Tool"
     echo -e "${ARROW} ${YELLOW}help${NC} ◇ Show Help Information"
     echo -e "${ARROW} ${RED}exit${NC} ◇ Quit Program"
     echo -e "${LINE}"
@@ -137,7 +137,7 @@ install_option() {
             wget https://raw.githubusercontent.com/sbatrow/DARKSSH-MANAGER/master/Dark; chmod 777 Dark; ./Dark
             ;;
         6)
-            echo -e "${CHECK} Installing 404-SSH Manager..."
+            echo -e "${CHECK} Installing NAOKI-SSH Manager..."
             wget https://raw.githubusercontent.com/nyeinkokoaung404/ssh-manger/main/hehe; chmod 777 hehe;./hehe
             ;;
         7)
@@ -151,7 +151,7 @@ install_option() {
         404)
             echo -e "${CHECK} Installing Selector Tool..."
             bash <(curl -fsSL https://raw.githubusercontent.com/nyeinkokoaung404/Selector/main/install.sh)
-            echo -e "\n${STAR} ${GREEN}Installation complete! You can now run the tool with '404' command.${NC}"
+            echo -e "\n${STAR} ${GREEN}Installation complete! You can now run the tool with '9' command.${NC}"
             ;;
         *)
             echo -e "${CROSS} ${RED}Invalid option!${NC}"
@@ -168,7 +168,7 @@ show_system_info
 while true; do
     show_menu
     
-    echo -en "${HEART} ${CYAN}Enter your choice (0-8/404/help/exit):${NC} "
+    echo -en "${HEART} ${CYAN}Enter your choice (0-9/help/exit):${NC} "
     read -r user_input
     
     case $user_input in
@@ -181,7 +181,7 @@ while true; do
             exit 0
             ;;
         *)
-            if [[ "$user_input" =~ ^(0|1|2|3|4|5|6|7|8|404)$ ]]; then
+            if [[ "$user_input" =~ ^(0|1|2|3|4|5|6|7|8|9)$ ]]; then
                 install_option "$user_input"
                 echo -e "${LINE}"
                 echo -e "${CHECK} ${GREEN}Operation completed successfully!${NC}"
