@@ -92,9 +92,8 @@ show_menu() {
     echo -e "${ARROW} ${GREEN}1${NC} ◇ Install MHSanaei 3X-UI (Xray Panel)"
     echo -e "${ARROW} ${GREEN}2${NC} ◇ Install Alireza0 3X-UI (Alternative Panel)"
     echo -e "${ARROW} ${GREEN}3${NC} ◇ Install UDP Custom Manager"
-    echo -e "${ARROW} ${GREEN}4${NC} ◇ Install NAOKI-SSH Manager"
-    echo -e "${ARROW} ${GREEN}5${NC} ◇ Install ZI-VPN"
-    echo -e "${ARROW} ${GREEN}6${NC} ◇ Uninstall ZI-VPN"
+    echo -e "${ARROW} ${GREEN}4${NC} ◇ Install ZI-VPN"
+    echo -e "${ARROW} ${GREEN}5${NC} ◇ Uninstall ZI-VPN"
     echo -e "${ARROW} ${RED}naoki${NC} ◇ Install Selector Tool"
     echo -e "${ARROW} ${YELLOW}help${NC} ◇ Show Help Information"
     echo -e "${ARROW} ${RED}exit${NC} ◇ Quit Program"
@@ -130,14 +129,10 @@ install_option() {
             wget "https://raw.githubusercontent.com/noobconner21/UDP-Custom-Script/main/install.sh" -O install.sh && chmod +x install.sh && bash install.sh
             ;;
         4)
-            echo -e "${CHECK} Installing NAOKI-SSH Manager..."
-            wget https://raw.githubusercontent.com/nyeinkokoaung404/ssh-manger/main/hehe; chmod 777 hehe;./hehe
-            ;;
-        5)
             echo -e "${CHECK} Installing ZI-VPN..."
             wget -O zi.sh https://raw.githubusercontent.com/zahidbd2/udp-zivpn/main/zi.sh; sudo chmod +x zi.sh; sudo ./zi.sh
             ;;
-        6)
+        5)
             echo -e "${CHECK} Uninstalling ZI-VPN..."
             sudo wget -O ziun.sh https://raw.githubusercontent.com/zahidbd2/udp-zivpn/main/uninstall.sh; sudo chmod +x ziun.sh; sudo ./ziun.sh
             ;;
@@ -161,7 +156,7 @@ show_system_info
 while true; do
     show_menu
     
-    echo -en "${HEART} ${CYAN}Enter your choice (0-8/naoki/help/exit):${NC} "
+    echo -en "${HEART} ${CYAN}Enter your choice (0-5/naoki/help/exit):${NC} "
     read -r user_input
     
     case $user_input in
