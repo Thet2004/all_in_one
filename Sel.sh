@@ -94,6 +94,7 @@ show_menu() {
     echo -e "${ARROW} ${GREEN}3${NC} ◇ Install UDP Custom Manager"
     echo -e "${ARROW} ${GREEN}4${NC} ◇ Install ZI-VPN"
     echo -e "${ARROW} ${GREEN}5${NC} ◇ Uninstall ZI-VPN"
+    echo -e "${ARROW} ${GREEN}6${NC} ◇ Install PPTP-VPN (Ubuntu version 20.04.6(LTS"
     echo -e "${ARROW} ${RED}naoki${NC} ◇ Install Selector Tool"
     echo -e "${ARROW} ${YELLOW}help${NC} ◇ Show Help Information"
     echo -e "${ARROW} ${RED}exit${NC} ◇ Quit Program"
@@ -136,6 +137,10 @@ install_option() {
             echo -e "${CHECK} Uninstalling ZI-VPN..."
             sudo wget -O ziun.sh https://raw.githubusercontent.com/zahidbd2/udp-zivpn/main/uninstall.sh; sudo chmod +x ziun.sh; sudo ./ziun.sh
             ;;
+        6)
+           echo -e "${CHECK} Installing PPTP-VPN..."
+           wget https://raw.githubusercontent.com/Thet2004/Auto_Setup_VPN_PPTP_Server_Ubuntu-Debian/master/pptp.sh
+           ;;
         naoki)
             echo -e "${CHECK} Installing Naoki Tool..."
             bash <(curl -fsSL https://raw.githubusercontent.com/Thet2004/all_in_one/main/install.sh)
@@ -156,7 +161,7 @@ show_system_info
 while true; do
     show_menu
     
-    echo -en "${HEART} ${CYAN}Enter your choice (0-5/naoki/help/exit):${NC} "
+    echo -en "${HEART} ${CYAN}Enter your choice (0-6/naoki/help/exit):${NC} "
     read -r user_input
     
     case $user_input in
