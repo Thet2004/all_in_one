@@ -94,7 +94,7 @@ show_menu() {
     echo -e "${ARROW} ${GREEN}3${NC} ◇ Install UDP Custom Manager"
     echo -e "${ARROW} ${GREEN}4${NC} ◇ Install ZI-VPN"
     echo -e "${ARROW} ${GREEN}5${NC} ◇ Uninstall ZI-VPN"
-    echo -e "${ARROW} ${GREEN}6${NC} ◇ Install PPTP-VPN (Ubuntu version 20.04.6(LTS"
+    echo -e "${ARROW} ${GREEN}6${NC} ◇ Install PPTP-VPN (Ubuntu version 20.04.6)"
     echo -e "${ARROW} ${RED}naoki${NC} ◇ Install Selector Tool"
     echo -e "${ARROW} ${YELLOW}help${NC} ◇ Show Help Information"
     echo -e "${ARROW} ${RED}exit${NC} ◇ Quit Program"
@@ -139,7 +139,7 @@ install_option() {
             ;;
         6)
            echo -e "${CHECK} Installing PPTP-VPN..."
-           wget https://raw.githubusercontent.com/Thet2004/Auto_Setup_VPN_PPTP_Server_Ubuntu-Debian/master/pptp.sh
+           wget https://raw.githubusercontent.com/Thet2004/PPTP-VPN/master/install.sh
            ;;
         naoki)
             echo -e "${CHECK} Installing Naoki Tool..."
